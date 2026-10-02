@@ -1,0 +1,1087 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Luxury Extensions — Salão de Beleza</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Jost:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --cream: #f7eee2;
+        --cream-soft: #fbf6ef;
+        --wine: #5c1f30;
+        --wine-deep: #421624;
+        --gold: #c9a66b;
+        --gold-soft: #e4d3b6;
+        --ink: #2b1b22;
+        --ink-soft: #7a5c63;
+        --on-wine: #f3e6e9;
+        --on-wine-soft: #cfa6ae;
+        --line: #d9c6b8;
+        --line-wine: #6e3345;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+          --cream: #efe3d2;
+          --cream-soft: #f5ebdc;
+        }
+      }
+      :root[data-theme="dark"] {
+        --cream: #efe3d2;
+        --cream-soft: #f5ebdc;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        * {
+          animation-duration: 0.001ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.001ms !important;
+        }
+      }
+      body {
+        margin: 0;
+        background: var(--cream);
+        color: var(--ink);
+        font-family: "Jost", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+        padding-top: env(safe-area-inset-top, 0px);
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        color: inherit;
+      }
+      .wrap {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+      @media (max-width: 640px) {
+        .wrap {
+          padding: 0 20px;
+        }
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Cormorant Garamond", serif;
+        margin: 0;
+        letter-spacing: 0;
+      }
+
+      /* ---- TRIAL BANNER ---- */
+      .trial-banner {
+        background: var(--wine);
+        color: var(--gold-soft);
+        text-align: center;
+        padding: 10px 16px;
+        font-size: 0.84rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding-top: calc(10px + env(safe-area-inset-top, 0px));
+      }
+      .trial-banner svg {
+        width: 14px;
+        height: 14px;
+        flex: none;
+        color: var(--gold);
+      }
+
+      /* ---- NAV ---- */
+      header.nav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(247, 238, 226, 0.92);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--line);
+      }
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 0;
+      }
+      .logo {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 600;
+        font-size: 1.4rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--wine);
+      }
+      .logo-mark {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 1px solid var(--gold);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: none;
+      }
+      .logo-mark svg {
+        width: 15px;
+        height: 15px;
+      }
+      nav.links {
+        display: flex;
+        gap: 36px;
+        font-size: 0.95rem;
+      }
+      nav.links a {
+        text-decoration: none;
+        color: var(--ink-soft);
+        transition: color 0.2s ease;
+      }
+      nav.links a:hover {
+        color: var(--wine);
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 26px;
+        border-radius: 2px;
+        font-family: "Jost", sans-serif;
+        font-weight: 500;
+        font-size: 0.92rem;
+        letter-spacing: 0.02em;
+        text-decoration: none;
+        cursor: pointer;
+        border: 1px solid transparent;
+        transition:
+          transform 0.18s ease,
+          box-shadow 0.18s ease,
+          background 0.2s ease,
+          color 0.2s ease;
+      }
+      .btn:focus-visible {
+        outline: 2px solid var(--gold);
+        outline-offset: 3px;
+      }
+      .btn-wine {
+        background: var(--wine);
+        color: var(--cream-soft);
+      }
+      .btn-wine:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 22px -12px rgba(92, 31, 48, 0.55);
+      }
+      .btn-outline {
+        background: transparent;
+        border-color: var(--wine);
+        color: var(--wine);
+      }
+      .btn-outline:hover {
+        background: var(--wine);
+        color: var(--cream-soft);
+      }
+      .btn-gold-outline {
+        background: transparent;
+        border-color: var(--gold);
+        color: var(--on-wine);
+      }
+      .btn-gold-outline:hover {
+        background: var(--gold);
+        color: var(--wine-deep);
+      }
+      .hamburger {
+        display: none;
+        background: none;
+        border: 0;
+        cursor: pointer;
+        padding: 6px;
+      }
+      .hamburger span {
+        display: block;
+        width: 22px;
+        height: 1.5px;
+        background: var(--wine);
+        margin: 5px 0;
+      }
+      @media (max-width: 860px) {
+        nav.links {
+          display: none;
+        }
+        .hamburger {
+          display: block;
+        }
+      }
+      .mobile-menu {
+        display: none;
+        flex-direction: column;
+        padding: 4px 0 18px;
+      }
+      .mobile-menu.open {
+        display: flex;
+      }
+      .mobile-menu a {
+        padding: 10px 0;
+        text-decoration: none;
+        color: var(--ink);
+        border-bottom: 1px solid var(--line);
+        font-size: 1rem;
+      }
+
+      /* ---- HERO ---- */
+      .hero {
+        position: relative;
+        background: var(--cream);
+        padding: 88px 0 100px;
+        overflow: hidden;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 60px;
+        align-items: center;
+      }
+      @media (max-width: 900px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+          gap: 56px;
+        }
+        .hero {
+          padding: 56px 0 64px;
+        }
+      }
+      .tagline {
+        font-family: "Cormorant Garamond", serif;
+        font-style: italic;
+        font-weight: 500;
+        color: var(--wine);
+        font-size: 1.2rem;
+        margin-bottom: 16px;
+      }
+      .hero h1 {
+        font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+        font-weight: 500;
+        line-height: 1.12;
+        color: var(--ink);
+        max-width: 15ch;
+      }
+      .hero p.lede {
+        margin-top: 24px;
+        max-width: 46ch;
+        color: var(--ink-soft);
+        font-size: 1.04rem;
+        line-height: 1.65;
+      }
+      .hero-actions {
+        display: flex;
+        gap: 16px;
+        margin-top: 34px;
+        flex-wrap: wrap;
+      }
+      .stats {
+        display: flex;
+        gap: 0;
+        margin-top: 50px;
+        flex-wrap: wrap;
+      }
+      .stat {
+        padding-right: 26px;
+        margin-right: 26px;
+        border-right: 1px solid var(--line);
+      }
+      .stat:last-child {
+        border: none;
+        margin: 0;
+        padding: 0;
+      }
+      .stat .num {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.65rem;
+        color: var(--wine);
+        display: block;
+      }
+      .stat .lbl {
+        font-size: 0.82rem;
+        color: var(--ink-soft);
+        margin-top: 2px;
+      }
+
+      .hero-visual {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 380px;
+      }
+      .hero-arc {
+        position: absolute;
+        width: 82%;
+        max-width: 380px;
+        aspect-ratio: 1/1;
+        border: 1px solid var(--gold-soft);
+        border-radius: 50%;
+        z-index: 0;
+      }
+      .hero-frame {
+        position: relative;
+        width: min(72vw, 320px);
+        border-radius: 8px;
+        overflow: hidden;
+        background: var(--cream-soft);
+        border: 1px solid var(--gold);
+        box-shadow: 0 30px 60px -28px rgba(92, 31, 48, 0.35);
+        z-index: 2;
+      }
+      .hero-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .hero-badge {
+        position: absolute;
+        bottom: -16px;
+        left: 8%;
+        background: var(--wine);
+        color: var(--gold-soft);
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 600;
+        font-size: 0.88rem;
+        padding: 10px 18px;
+        border-radius: 2px;
+        box-shadow: 0 14px 26px -12px rgba(0, 0, 0, 0.35);
+        z-index: 3;
+      }
+
+      section {
+        padding: 100px 0;
+      }
+      @media (max-width: 640px) {
+        section {
+          padding: 64px 0;
+        }
+      }
+      .eyebrow-free {
+        color: var(--ink-soft);
+        max-width: 38ch;
+        margin-top: 14px;
+        line-height: 1.6;
+      }
+
+      /* ---- VALUE (wine) ---- */
+      .value {
+        background: var(--wine);
+        color: var(--on-wine);
+      }
+      .value-grid {
+        display: grid;
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: 64px;
+        align-items: center;
+      }
+      @media (max-width: 900px) {
+        .value-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .value-img-wrap {
+        position: relative;
+        border-radius: 50% 50% 8px 8px / 60% 60% 8px 8px;
+        overflow: hidden;
+        border: 1px solid var(--line-wine);
+        max-width: 340px;
+      }
+      .value-img-wrap img {
+        width: 100%;
+        display: block;
+      }
+      .value h2 {
+        font-size: clamp(1.9rem, 3.2vw, 2.5rem);
+        font-weight: 500;
+        max-width: 14ch;
+        line-height: 1.16;
+        color: var(--cream-soft);
+      }
+      .value p.lede {
+        color: var(--on-wine-soft);
+        margin-top: 16px;
+        max-width: 44ch;
+        line-height: 1.65;
+      }
+      .benefits {
+        list-style: none;
+        margin: 28px 0 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+      .benefits li {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: var(--on-wine);
+      }
+      .benefits svg {
+        flex: none;
+        width: 18px;
+        height: 18px;
+        margin-top: 4px;
+        color: var(--gold);
+      }
+
+      /* ---- SERVICES / price list ---- */
+      .services {
+        background: var(--cream);
+      }
+      .services-head {
+        max-width: 56ch;
+      }
+      .services h2 {
+        font-size: clamp(1.9rem, 3.2vw, 2.5rem);
+        font-weight: 500;
+        color: var(--wine);
+      }
+      .price-list {
+        margin-top: 52px;
+        display: flex;
+        flex-direction: column;
+      }
+      .price-row {
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+        padding: 20px 0;
+        border-top: 1px solid var(--line);
+      }
+      .price-row:last-child {
+        border-bottom: 1px solid var(--line);
+      }
+      .price-row .name {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.25rem;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+      .price-row .dots {
+        flex: 1;
+        border-bottom: 1px dotted var(--line);
+        transform: translateY(-6px);
+        min-width: 30px;
+      }
+      .price-row .price {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.2rem;
+        color: var(--wine);
+        white-space: nowrap;
+      }
+      .price-row .desc {
+        width: 100%;
+        color: var(--ink-soft);
+        font-size: 0.88rem;
+        margin-top: -8px;
+      }
+
+      /* ---- CONTACT (wine) ---- */
+      .contact {
+        background: var(--wine-deep);
+        color: var(--on-wine);
+      }
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        align-items: start;
+      }
+      @media (max-width: 900px) {
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .contact h2 {
+        font-size: clamp(1.8rem, 3vw, 2.3rem);
+        font-weight: 500;
+        max-width: 14ch;
+        color: var(--cream-soft);
+      }
+      .contact p.lede {
+        color: var(--on-wine-soft);
+        margin-top: 14px;
+        max-width: 44ch;
+        line-height: 1.6;
+      }
+      .info-list {
+        list-style: none;
+        padding: 0;
+        margin: 32px 0 0;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .info-list li {
+        display: flex;
+        gap: 14px;
+        font-size: 0.98rem;
+        color: var(--on-wine);
+      }
+      .info-list svg {
+        flex: none;
+        width: 18px;
+        height: 18px;
+        color: var(--gold);
+        margin-top: 2px;
+      }
+      form.contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .field label {
+        font-size: 0.82rem;
+        color: var(--on-wine-soft);
+      }
+      .field input,
+      .field textarea {
+        background: rgba(247, 238, 226, 0.06);
+        border: 1px solid var(--line-wine);
+        color: var(--on-wine);
+        border-radius: 4px;
+        padding: 12px 14px;
+        font-family: "Jost", sans-serif;
+        font-size: 0.96rem;
+        resize: vertical;
+      }
+      .field input:focus,
+      .field textarea:focus {
+        outline: 2px solid var(--gold);
+        outline-offset: 1px;
+        border-color: var(--gold);
+      }
+      .form-msg {
+        font-size: 0.88rem;
+        color: var(--gold);
+        min-height: 1.2em;
+        margin-top: 2px;
+      }
+
+      footer {
+        background: var(--cream);
+        padding: 52px 0 30px;
+        border-top: 1px solid var(--line);
+      }
+      .footer-grid {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 26px;
+      }
+      .footer-brand {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 600;
+        font-size: 1.2rem;
+        color: var(--wine);
+      }
+      .footer-nav {
+        display: flex;
+        gap: 22px;
+        flex-wrap: wrap;
+        font-size: 0.9rem;
+        color: var(--ink-soft);
+      }
+      .footer-nav a {
+        text-decoration: none;
+      }
+      .footer-nav a:hover {
+        color: var(--wine);
+      }
+      .footer-bottom {
+        margin-top: 32px;
+        padding-top: 20px;
+        border-top: 1px solid var(--line);
+        font-size: 0.83rem;
+        color: var(--ink-soft);
+      }
+
+      .gallery-section {
+        background: var(--cream-soft);
+        display: none;
+      }
+      .testimonials-section {
+        background: var(--cream);
+      }
+      .section-head {
+        max-width: 56ch;
+        margin-bottom: 44px;
+      }
+      .section-head h2 {
+        font-size: clamp(1.9rem, 3.2vw, 2.5rem);
+        font-weight: 500;
+        color: var(--wine);
+        margin-bottom: 10px;
+      }
+      .section-head p {
+        color: var(--ink-soft);
+        line-height: 1.65;
+        margin: 0;
+      }
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      .gallery-grid img {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        border-radius: 8px;
+        display: block;
+        background: var(--line);
+      }
+      .gallery-grid > * {
+        margin: 0;
+      }
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      .testimonials-grid > * {
+        margin: 0;
+        background: var(--cream-soft);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 26px 24px;
+      }
+      .testimonials-grid p {
+        margin: 0 0 14px;
+        color: var(--ink-soft);
+        font-style: italic;
+        line-height: 1.65;
+      }
+      .testimonials-grid strong,
+      .testimonials-grid footer,
+      .testimonials-grid cite,
+      .testimonials-grid span {
+        color: var(--wine);
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+      @media (max-width: 900px) {
+        .testimonials-grid {
+          grid-template-columns: 1fr;
+        }
+        .gallery-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 640px) {
+        .gallery-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(18px);
+        animation: rise 0.8s ease forwards;
+      }
+      .reveal.d1 {
+        animation-delay: 0.08s;
+      }
+      .reveal.d2 {
+        animation-delay: 0.18s;
+      }
+      @keyframes rise {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="trial-banner" id="trialBanner">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle
+          cx="12"
+          cy="13"
+          r="8"
+          stroke="currentColor"
+          stroke-width="1.8"
+        />
+        <path
+          d="M12 9v4l2.5 2.5"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M9 2h6M5 5l1.5 1.5M19 5l-1.5 1.5"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+        />
+      </svg>
+      <span id="trialBannerText">Este site modelo expira em 5 dias</span>
+    </div>
+
+    <header class="nav">
+      <div class="wrap nav-inner">
+        <div class="logo">
+          <span class="logo-mark">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 3v18M6 8c0 3 3 4 6 4s6 1 6 4"
+                stroke="#5C1F30"
+                stroke-width="1.4"
+                stroke-linecap="round"
+              />
+            </svg>
+          </span>
+          Luxury Extensions
+        </div>
+        <nav class="links">
+          <a href="#inicio">Início</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#contato">Contato</a>
+        </nav>
+        <div style="display: flex; align-items: center; gap: 18px">
+          <a href="https://wa.me/5517902541768" class="btn btn-wine" style="padding: 11px 22px"
+            >Agendar pelo WhatsApp</a
+          >
+          <button
+            class="hamburger"
+            id="hamburger"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="mobile-menu" id="mobileMenu">
+          <a href="#inicio">Início</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#contato">Contato</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero" id="inicio">
+      <div class="wrap hero-grid">
+        <div class="reveal d1">
+          <p class="tagline">Beleza e sofisticação no Rio de Janeiro.</p>
+          <h1>Luxury Extensions: O seu momento de autocuidado.</h1>
+          <p class="lede">
+            Especialistas em realçar sua beleza natural com técnicas precisas de corte, coloração e tratamentos capilares de alta performance. Agende seu horário e sinta a diferença de um serviço exclusivo.
+          </p>
+          <div class="hero-actions">
+            <a href="https://wa.me/5517902541768" class="btn btn-wine">Agendar pelo WhatsApp</a>
+            <a href="#servicos" class="btn btn-outline">Ver serviços</a>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <span class="num">Excelência</span><span class="lbl">em atendimento</span>
+            </div>
+            <div class="stat">
+              <span class="num">VIP</span>
+              <span class="lbl">experiência no Rio</span>
+            </div>
+            <div class="stat">
+              <span class="num">Alta</span>
+              <span class="lbl">performance</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual reveal d2">
+          <div class="hero-arc"></div>
+          <div class="hero-frame">
+            <img
+              src="assets/salao/kit_00_3c9b7456.webp"
+              alt="Fachada e ambiente de recepção do Luxury Extensions"
+            />
+          </div>
+          <div class="hero-badge">
+            Luxury Extensions<br /><span
+              style="
+                font-family: &quot;Jost&quot;, sans-serif;
+                font-weight: 400;
+                font-size: 0.72rem;
+              "
+              >Beleza premium</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="value" id="sobre">
+      <div class="wrap value-grid">
+        <div class="value-img-wrap reveal">
+          <img
+            src="assets/salao/kit_01_d8aa7f06.webp"
+            alt="Ambiente interno do salão Luxury Extensions, preparado para atendimento"
+            loading="lazy"
+          />
+        </div>
+        <div class="reveal d1">
+          <h2>Transformação com elegância e saúde.</h2>
+          <p class="lede">Luxury Extensions é um salão de beleza no Rio de Janeiro dedicado à arte de cuidar. Combinamos técnicas modernas com um atendimento personalizado, garantindo que cada cliente saia sentindo-se única e confiante em cada detalhe.</p>
+          <ul class="benefits">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M20 6 9 17l-5-5"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                /></svg
+              >Equipe altamente qualificada no Rio.
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M20 6 9 17l-5-5"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                /></svg
+              >Tratamentos exclusivos e personalizados.
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M20 6 9 17l-5-5"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                /></svg
+              >Ambiente aconchegante e sofisticado.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="servicos">
+      <div class="wrap">
+        <div class="services-head reveal">
+          <h2>Nossos Serviços</h2>
+          <p class="eyebrow-free">
+            Confira as especialidades que oferecemos para realçar o seu estilo.
+          </p>
+        </div>
+        <div class="price-list">
+          <div class="price-row reveal">
+            <span class="name">Corte feminino</span><span class="dots"></span
+            ><span class="price">Consulte</span>
+          </div>
+          <div class="price-row reveal d1">
+            <span class="name">Escova / Modelagem</span
+            ><span class="dots"></span
+            ><span class="price">Consulte</span>
+          </div>
+          <div class="price-row reveal d1">
+            <span class="name">Coloração</span><span class="dots"></span
+            ><span class="price">Consulte</span>
+          </div>
+          <div class="price-row reveal d2">
+            <span class="name">Mechas / Luzes</span
+            ><span class="dots"></span><span class="price">Consulte</span>
+          </div>
+          <div class="price-row reveal d2">
+            <span class="name">Tratamentos Capilares</span
+            ><span class="dots"></span
+            ><span class="price">Consulte</span>
+          </div>
+          <div class="price-row reveal d2">
+            <span class="name">Manicure / Pedicure</span
+            ><span class="dots"></span
+            ><span class="price">Consulte</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery-section" id="galeria" style="display:none">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2>Galeria</h2>
+          <p>Um olhar sobre o nosso espaço e o nosso trabalho.</p>
+        </div>
+        <div class="gallery-grid reveal">
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials-section" id="depoimentos">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2>Depoimentos</h2>
+          <p>O que as nossas clientes dizem.</p>
+        </div>
+        <div class="testimonials-grid reveal">
+          <div><p>"O melhor atendimento do Rio. Saí renovada e apaixonada pelo resultado!"</p><footer>— Ana Paula M.</footer></div>
+          <div><p>"Profissionais extremamente atenciosos. Entendem exatamente o que o cabelo precisa."</p><footer>— Beatriz C.</footer></div>
+          <div><p>"A experiência no Luxury Extensions é impecável do começo ao fim. Recomendo muito!"</p><footer>— Camila S.</footer></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contato">
+      <div class="wrap contact-grid">
+        <div class="reveal">
+          <h2>Vamos agendar o seu horário?</h2>
+          <p class="lede">
+            Estamos localizados no Rio de Janeiro. Entre em contato pelo WhatsApp para reservar o seu momento.
+          </p>
+          <ul class="info-list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                /></svg
+              >(17) 9XXXX-XXXX
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                />
+                <circle
+                  cx="12"
+                  cy="9.5"
+                  r="2.4"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                /></svg
+              >Rio de Janeiro
+            </li>
+          </ul>
+        </div>
+        <div class="reveal d1">
+          <form class="contact-form" id="contactForm">
+            <div class="field">
+              <label for="nome">Nome</label
+              ><input
+                id="nome"
+                name="nome"
+                type="text"
+                required
+                placeholder="Seu nome"
+              />
+            </div>
+            <div class="field">
+              <label for="email">E-mail</label
+              ><input
+                id="email"
+                name="email"
+                type="email"
+                required
+                placeholder="voce@email.com"
+              />
+            </div>
+            <div class="field">
+              <label for="mensagem">Mensagem</label
+              ><textarea
+                id="mensagem"
+                name="mensagem"
+                rows="3"
+                required
+                placeholder="Conte o que você procura"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="btn btn-gold-outline"
+              style="margin-top: 4px"
+            >
+              Enviar mensagem
+            </button>
+            <p class="form-msg" id="formMsg" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <div class="footer-grid">
+          <div class="footer-brand">Luxury Extensions</div>
+          <nav class="footer-nav">
+            <a href="#inicio">Início</a><a href="#sobre">Sobre</a
+            ><a href="#servicos">Serviços</a><a href="#contato">Contato</a>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          © 2026 Luxury Extensions. Todos os direitos reservados.
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const mobileMenu = document.getElementById("mobileMenu");
+      hamburger.addEventListener("click", () => {
+        const open = mobileMenu.classList.toggle("open");
+        hamburger.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+      mobileMenu.querySelectorAll("a").forEach((a) =>
+        a.addEventListener("click", () => {
+          mobileMenu.classList.remove("open");
+          hamburger.setAttribute("aria-expanded", "false");
+        }),
+      );
+
+      const form = document.getElementById("contactForm");
+      const msg = document.getElementById("formMsg");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        msg.textContent =
+          "Mensagem enviada! Formulário de exemplo — conecte ao seu backend ou e-mail preferido.";
+        form.reset();
+      });
+    </script>
+  </body>
+</html>
