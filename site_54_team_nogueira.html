@@ -1,0 +1,915 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Nogueira — Personal Trainer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        /* Requested Color Palette */
+        --bg-page: #121212;
+        --bg-soft: #1e1e1e;
+        --bg-deep: #000000;
+        --bg-deep-2: #111111;
+        --ink: #f5f5f5;
+        --ink-soft: #b0b0b0;
+        --on-deep: #ffffff;
+        --on-deep-soft: #cccccc;
+        --gold: #ff5722;
+        --line: #333333;
+        --line-deep: #222222;
+
+        /* Typography & Spacing */
+        --font-main: "Inter", sans-serif;
+        --container-width: 1200px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--font-main);
+        background-color: var(--bg-page);
+        color: var(--ink);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      .wrap {
+        max-width: var(--container-width);
+        margin: 0 auto;
+        padding: 0 5%;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        line-height: 1.2;
+        font-weight: 700;
+        color: var(--on-deep);
+      }
+
+      p {
+        color: var(--ink-soft);
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: var(--gold);
+        color: var(--on-deep);
+        padding: 1.2rem 2.5rem;
+        border-radius: 4px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: none;
+      }
+
+      .btn:hover {
+        background-color: #e64a19;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(255, 87, 34, 0.2);
+      }
+
+      .trial-banner {
+        background-color: var(--gold);
+        color: var(--on-deep);
+        text-align: center;
+        padding: 10px 16px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+
+      .trial-banner svg {
+        width: 14px;
+        height: 14px;
+        flex: none;
+      }
+
+      .contact-list {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem 2.5rem;
+        margin: 0 auto 2.5rem auto;
+        max-width: 700px;
+      }
+
+      .contact-list li {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        color: var(--ink-soft);
+        font-size: 1rem;
+      }
+
+      .contact-list svg {
+        width: 18px;
+        height: 18px;
+        color: var(--gold);
+        flex: none;
+      }
+
+      .section-header {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto 4rem auto;
+      }
+
+      .section-header h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .testimonials-section {
+        padding: 6rem 0;
+        background-color: var(--bg-page);
+        border-top: 1px solid var(--line);
+      }
+
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+
+      .testimonials-grid > * {
+        margin: 0;
+        background-color: var(--bg-soft);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 2.5rem;
+      }
+
+      .testimonials-grid p {
+        font-style: italic;
+        margin-bottom: 1rem;
+      }
+
+      .testimonials-grid strong,
+      .testimonials-grid footer,
+      .testimonials-grid cite,
+      .testimonials-grid span {
+        color: var(--gold);
+        font-size: 0.9rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        background-color: rgba(17, 17, 17, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--line);
+        z-index: 1000;
+        transition: all 0.3s ease;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 90px;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: var(--gold);
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+      }
+
+      .logo span {
+        color: var(--on-deep);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2.5rem;
+        align-items: center;
+      }
+
+      .nav-links a {
+        color: var(--on-deep-soft);
+        font-weight: 500;
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--gold);
+      }
+
+      .menu-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 6px;
+        cursor: pointer;
+      }
+
+      .menu-toggle span {
+        width: 30px;
+        height: 3px;
+        background-color: var(--on-deep);
+        transition: all 0.3s ease;
+      }
+
+      .hero {
+        padding: 7rem 0;
+        position: relative;
+        background-color: var(--bg-page);
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        align-items: center;
+      }
+
+      .hero-content .tagline {
+        color: var(--gold);
+        font-weight: 700;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        display: block;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-content h1 {
+        font-size: 4rem;
+        margin-bottom: 2rem;
+        letter-spacing: -1px;
+      }
+
+      .hero-content p {
+        font-size: 1.2rem;
+        margin-bottom: 2.5rem;
+        max-width: 90%;
+      }
+
+      .hero-image {
+        position: relative;
+        border-radius: 8px;
+      }
+
+      .hero-image img {
+        border-radius: 8px;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
+        width: 100%;
+        height: 650px;
+      }
+
+      .hero-image::after {
+        content: "";
+        position: absolute;
+        bottom: -20px;
+        right: -20px;
+        width: 100%;
+        height: 100%;
+        border: 2px solid var(--gold);
+        border-radius: 8px;
+        z-index: -1;
+      }
+
+      .stats {
+        background-color: var(--bg-deep);
+        padding: 5rem 0;
+        border-top: 1px solid var(--line-deep);
+        border-bottom: 1px solid var(--line-deep);
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        text-align: center;
+      }
+
+      .stat-item h3 {
+        font-size: 3.5rem;
+        color: var(--gold);
+        margin-bottom: 0.5rem;
+        font-weight: 900;
+      }
+
+      .stat-item p {
+        font-size: 1rem;
+        color: var(--on-deep-soft);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 500;
+      }
+
+      .about {
+        padding: 8rem 0;
+        background-color: var(--bg-soft);
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        align-items: center;
+      }
+
+      .about-image img {
+        border-radius: 8px;
+        width: 100%;
+        height: 550px;
+        filter: grayscale(20%);
+      }
+
+      .about-content h2 {
+        font-size: 2.8rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .about-content p {
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+      }
+
+      .services {
+        padding: 8rem 0;
+        background-color: var(--bg-page);
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+
+      .service-card {
+        background-color: var(--bg-soft);
+        padding: 3.5rem 2.5rem;
+        border-radius: 8px;
+        border: 1px solid var(--line);
+        transition: all 0.4s ease;
+        text-align: left;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        border-color: var(--gold);
+        background-color: var(--bg-deep-2);
+      }
+
+      .service-icon {
+        font-size: 2.5rem;
+        color: var(--gold);
+        margin-bottom: 1.5rem;
+      }
+
+      .service-card h3 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        color: var(--on-deep);
+      }
+
+      .gallery {
+        padding: 6rem 0;
+        background-color: var(--bg-deep);
+        border-top: 1px solid var(--line);
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+      }
+
+      .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 4px;
+        aspect-ratio: 1;
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        transition: transform 0.6s ease;
+      }
+
+      .gallery-grid > img {
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: 4px;
+        transition: transform 0.6s ease;
+      }
+
+      .gallery-grid > img:hover {
+        transform: scale(1.08);
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.08);
+      }
+
+      .cta {
+        background-color: var(--bg-soft);
+        padding: 8rem 0;
+        text-align: center;
+        border-top: 1px solid var(--line);
+      }
+
+      .cta h2 {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .cta p {
+        font-size: 1.2rem;
+        margin-bottom: 2.5rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      footer {
+        background-color: var(--bg-deep);
+        padding: 4rem 0;
+        border-top: 1px solid var(--line-deep);
+        text-align: center;
+      }
+
+      footer p {
+        font-size: 0.9rem;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition:
+          opacity 0.8s ease-out,
+          transform 0.8s ease-out;
+      }
+
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 1024px) {
+        .hero-content h1 {
+          font-size: 3rem;
+        }
+        .hero-grid,
+        .about-grid {
+          gap: 3rem;
+        }
+        .hero-image img,
+        .about-image img {
+          height: 500px;
+        }
+        .gallery-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav-links {
+          position: absolute;
+          top: 90px;
+          left: 0;
+          width: 100%;
+          background-color: var(--bg-deep-2);
+          flex-direction: column;
+          padding: 2rem 0;
+          gap: 1.5rem;
+          border-bottom: 1px solid var(--line);
+          clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+          transition: clip-path 0.4s ease-in-out;
+        }
+
+        .nav-links.active {
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+
+        .menu-toggle {
+          display: flex;
+        }
+
+        /* Hamburger animation */
+        .menu-toggle.active span:nth-child(1) {
+          transform: translateY(9px) rotate(45deg);
+        }
+        .menu-toggle.active span:nth-child(2) {
+          opacity: 0;
+        }
+        .menu-toggle.active span:nth-child(3) {
+          transform: translateY(-9px) rotate(-45deg);
+        }
+
+        .hero-grid,
+        .about-grid {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+        .hero-image::after {
+          display: none;
+        }
+        .hero-content p {
+          margin: 0 auto 2.5rem auto;
+        }
+
+        .stats-grid {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+        .services-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .testimonials-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero,
+        .about,
+        .services,
+        .cta {
+          padding: 5rem 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="trial-banner" id="trialBanner">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle
+          cx="12"
+          cy="13"
+          r="8"
+          stroke="currentColor"
+          stroke-width="1.8"
+        />
+        <path
+          d="M12 9v4l2.5 2.5"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M9 2h6M5 5l1.5 1.5M19 5l-1.5 1.5"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+        />
+      </svg>
+      <span id="trialBannerText">Este site modelo expira em 5 dias</span>
+    </div>
+
+    <header>
+      <div class="wrap">
+        <nav>
+          <div class="logo">Team Nogueira</div>
+          <div class="nav-links">
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#galeria">Resultados</a>
+            <a href="#contato" class="btn" style="padding: 0.8rem 1.5rem"
+              >Agendar</a
+            >
+          </div>
+          <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <section id="inicio" class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-content reveal">
+          <span class="tagline"
+            >Superação que começa no primeiro movimento.</span
+          >
+          <h1>
+            Treinamento de alta performance para você alcançar sua melhor
+            versão.
+          </h1>
+          <p>
+            O Team Nogueira oferece acompanhamento personalizado para quem busca alta performance, emagrecimento e ganho de massa muscular com segurança. Com metodologias modernas e periodização sob medida, transformamos seus objetivos em resultados reais e duradouros.
+          </p>
+          <a href="#servicos" class="btn">Comece Agora</a>
+        </div>
+        <div class="hero-image reveal">
+          <img
+            src="assets/personal/kit_00_c490fbae.webp"
+            alt="Ilustração de mulher se exercitando com halter e elementos de vida saudável e nutrição"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="wrap stats-grid">
+        <div class="stat-item reveal">
+          <h3>10 anos</h3>
+          <p>De Experiência</p>
+        </div>
+        <div class="stat-item reveal" style="transition-delay: 0.2s">
+          <h3>500+</h3>
+          <p>Alunos Transformados</p>
+        </div>
+        <div class="stat-item reveal" style="transition-delay: 0.4s">
+          <h3>100%</h3>
+          <p>Foco no Resultado</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="about">
+      <div class="wrap about-grid">
+        <div class="about-image reveal">
+          <img
+            src="assets/personal/kit_01_6ff885d4.webp"
+            alt="Ilustração de casal praticando atividade física com ícones de saúde e bem-estar"
+            loading="lazy"
+          />
+        </div>
+        <div class="about-content reveal">
+          <span
+            class="tagline"
+            style="
+              color: var(--gold);
+              text-transform: uppercase;
+              letter-spacing: 2px;
+              font-size: 0.9rem;
+              font-weight: 700;
+              margin-bottom: 1rem;
+              display: block;
+            "
+            >Filosofia de Treino</span
+          >
+          <h2>Força, Disciplina e Consistência.</h2>
+          <p>
+            Meu método de treinamento não é sobre atalhos. É sobre construir uma
+            base sólida através da biomecânica correta e da intensidade ajustada
+            para o seu nível atual.
+          </p>
+          <p>
+            Acredito que o corpo humano é capaz de coisas incríveis quando
+            desafiado da maneira certa. Com a periodização adequada, reduzimos o
+            risco de lesões e maximizamos os resultados, seja qual for o seu
+            objetivo: ganho de massa, perda de gordura ou condicionamento
+            atlético.
+          </p>
+          <a href="#contato" class="btn" style="margin-top: 1rem"
+            >Conheça minha metodologia</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos" class="services">
+      <div class="wrap">
+        <div class="section-header reveal">
+          <h2>Planos & Serviços</h2>
+          <p>
+            Escolha a modalidade que melhor se adapta à sua rotina e aos seus
+            objetivos.
+          </p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card reveal">
+            <div class="service-icon">📐</div>
+            <h3>Avaliação Física</h3>
+            <p>
+              Análise detalhada da composição corporal, testes de flexibilidade e avaliação biomecânica para fundamentar e direcionar o seu programa de treinos.
+            </p>
+          </div>
+          <div class="service-card reveal" style="transition-delay: 0.2s">
+            <div class="service-icon">🏋️‍♂️</div>
+            <h3>Treino Personalizado</h3>
+            <p>
+              Atendimento presencial e individualizado com foco em execução técnica correta, intensidade ideal e máxima segurança a cada repetição.
+            </p>
+          </div>
+          <div class="service-card reveal" style="transition-delay: 0.4s">
+            <div class="service-icon">📊</div>
+            <h3>Acompanhamento Semanal</h3>
+            <p>
+              Monitoramento constante de métricas, evolução de cargas e ajustes periódicos para garantir resultados consistentes e contínuos.
+            </p>
+          </div>
+          <div class="service-card reveal">
+            <div class="service-icon">💻</div>
+            <h3>Treino Online</h3>
+            <p>
+              Prescrição de treinos sob medida entregue via aplicativo com vídeos demonstrativos e suporte direto para você treinar onde estiver.
+            </p>
+          </div>
+          <div class="service-card reveal" style="transition-delay: 0.2s">
+            <div class="service-icon">🗓️</div>
+            <h3>Periodização</h3>
+            <p>
+              Planejamento estruturado em ciclos estratégicos para otimizar ganhos de força, hipertrofia e prevenção de lesões ao longo do ano.
+            </p>
+          </div>
+          <div class="service-card reveal" style="transition-delay: 0.4s">
+            <div class="service-icon">🥗</div>
+            <h3>Nutrição Esportiva</h3>
+            <p>
+              Orientações alimentares estratégicas perfeitamente integradas ao seu protocolo de treinamento para acelerar sua transformação.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria" class="gallery">
+      <div class="wrap">
+        <div class="section-header reveal" style="margin-bottom: 3rem">
+          <h2 style="color: var(--on-deep)">Ambiente & Foco</h2>
+        </div>
+      </div>
+      <div class="wrap gallery-grid">
+        <img src="assets/personal/kit_02_ef1574f2.webp" alt="Team Nogueira — foto 3" loading="lazy" />
+      </div>
+    </section>
+
+    <section id="depoimentos" class="testimonials-section">
+      <div class="wrap">
+        <div class="section-header reveal">
+          <h2>O que dizem os alunos</h2>
+          <p>Resultados de quem treina com constância.</p>
+        </div>
+        <div class="testimonials-grid reveal">
+          <div>
+            <p>"O acompanhamento do Team Nogueira mudou totalmente minha rotina de treinos. Consegui alcançar meus objetivos em poucos meses com extrema segurança!"</p>
+            <footer>— Ricardo Silva</footer>
+          </div>
+          <div>
+            <p>"Excelente profissional! A periodização e o suporte diário fazem toda a diferença para manter a constância e evoluir sempre nos treinos."</p>
+            <footer>— Mariana Costa</footer>
+          </div>
+          <div>
+            <p>"Treino com o Team Nogueira há mais de um ano. A consultoria online é super completa e a atenção aos detalhes em cada exercício é impecável."</p>
+            <footer>— Felipe Alves</footer>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="cta">
+      <div class="wrap reveal">
+        <h2>Pronto para mudar sua vida?</h2>
+        <p>
+          Deixe as desculpas de lado. Agende uma conversa inicial gratuita e
+          vamos estruturar o caminho para a sua melhor versão.
+        </p>
+        <ul class="contact-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none">
+              <path
+                d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"
+                stroke="currentColor"
+                stroke-width="1.6"
+              /></svg
+            >(17) 90254-3534
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none">
+              <path
+                d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z"
+                stroke="currentColor"
+                stroke-width="1.6"
+              />
+              <circle
+                cx="12"
+                cy="9.5"
+                r="2.4"
+                stroke="currentColor"
+                stroke-width="1.6"
+              /></svg
+            >São Paulo
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none">
+              <circle
+                cx="12"
+                cy="12"
+                r="9"
+                stroke="currentColor"
+                stroke-width="1.6"
+              />
+              <path
+                d="M12 7v5l3.5 2"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+              /></svg
+            >Seg a Sáb, 6h — 22h
+          </li>
+        </ul>
+        <a href="https://wa.me/5517902543534" class="btn">Agendar pelo WhatsApp</a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <div class="logo" style="margin-bottom: 1rem; font-size: 1.2rem">
+          Team Nogueira
+        </div>
+        <p>
+          &copy; 2026 Team Nogueira. Todos os direitos reservados.
+          Foco no progresso.
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Hamburger Menu Logic
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navLinks = document.querySelector(".nav-links");
+
+      menuToggle.addEventListener("click", () => {
+        menuToggle.classList.toggle("active");
+        navLinks.classList.toggle("active");
+      });
+
+      // Close mobile menu when clicking a link
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          menuToggle.classList.remove("active");
+          navLinks.classList.remove("active");
+        });
+      });
+
+      // Intersection Observer for Reveal Animations
+      const revealElements = document.querySelectorAll(".reveal");
+
+      const revealOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const revealOnScroll = new IntersectionObserver(function (
+        entries,
+        observer,
+      ) {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          } else {
+            entry.target.classList.add("active");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, revealOptions);
+
+      revealElements.forEach((el) => {
+        revealOnScroll.observe(el);
+      });
+    </script>
+  </body>
+</html>
