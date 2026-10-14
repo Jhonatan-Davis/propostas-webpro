@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Prévia expirada — WebPro Solutions</title>
+    <style>
+      :root {
+        --bg: #0f0722;
+        --ink: #f5f0ff;
+        --muted: #b9abdf;
+        --roxo: #a855f7;
+        --roxo-claro: #c9a7ff;
+        --linha: #35205f;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        font-family:
+          "Segoe UI",
+          -apple-system,
+          Roboto,
+          Arial,
+          sans-serif;
+        background:
+          radial-gradient(
+            55% 75% at 75% 45%,
+            #3a1a7c 0%,
+            rgba(58, 26, 124, 0) 70%
+          ),
+          var(--bg);
+        color: var(--ink);
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+        align-items: center;
+        overflow-x: hidden;
+      }
+      .texto {
+        padding: 48px 24px 48px clamp(24px, 7vw, 110px);
+        max-width: 640px;
+      }
+      .marca {
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--roxo-claro);
+        margin-bottom: 36px;
+      }
+      .marca span {
+        color: var(--muted);
+        font-weight: 500;
+      }
+      h1 {
+        font-size: clamp(32px, 4.2vw, 54px);
+        line-height: 1.08;
+        letter-spacing: -0.02em;
+        margin-bottom: 20px;
+      }
+      .texto p {
+        font-size: 17px;
+        line-height: 1.65;
+        color: var(--muted);
+        max-width: 46ch;
+        margin-bottom: 14px;
+      }
+      .texto p b {
+        color: var(--ink);
+        font-weight: 600;
+      }
+      .acoes {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 30px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 24px;
+        border-radius: 12px;
+        font-size: 16px;
+        font-weight: 600;
+        text-decoration: none;
+        transition:
+          transform 0.15s ease,
+          box-shadow 0.15s ease,
+          background 0.15s ease;
+      }
+      .btn svg {
+        width: 20px;
+        height: 20px;
+        flex: none;
+      }
+      .btn-zap {
+        background: #16a34a;
+        color: #fff;
+        box-shadow: 0 8px 22px rgba(22, 163, 74, 0.28);
+      }
+      .btn-zap:hover {
+        background: #15803d;
+        transform: translateY(-2px);
+      }
+      .btn-mail {
+        background: transparent;
+        color: var(--roxo-claro);
+        border: 1.5px solid var(--roxo);
+      }
+      .btn-mail:hover {
+        background: var(--roxo);
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 22px rgba(168, 85, 247, 0.35);
+      }
+      .btn:focus-visible {
+        outline: 3px solid var(--roxo);
+        outline-offset: 3px;
+      }
+      .nota {
+        margin-top: 22px;
+        font-size: 14px;
+        color: var(--muted);
+      }
+      footer {
+        margin-top: 44px;
+        padding-top: 18px;
+        border-top: 1px solid var(--linha);
+        font-size: 13px;
+        color: var(--muted);
+      }
+      footer strong {
+        color: var(--ink);
+      }
+
+      .cena {
+        position: relative;
+        align-self: stretch;
+        display: flex;
+        align-items: center;
+      }
+      .cena picture {
+        display: contents;
+      }
+      .cena img {
+        width: 118%;
+        max-width: none;
+        margin-left: -12%;
+        height: auto;
+        display: block;
+        filter: drop-shadow(0 0 36px rgba(168, 85, 247, 0.45));
+        animation: flutuar 7s ease-in-out infinite;
+      }
+      @keyframes flutuar {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-14px);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .cena img {
+          animation: none;
+        }
+      }
+
+      @media (max-width: 860px) {
+        body {
+          grid-template-columns: 1fr;
+          align-items: start;
+        }
+        .cena {
+          order: -1;
+        }
+        .cena img {
+          width: 130%;
+          margin: 0 0 -6% -15%;
+        }
+        .texto {
+          padding: 8px 24px 40px;
+          max-width: 560px;
+          margin: 0 auto;
+        }
+        .marca {
+          margin-bottom: 20px;
+        }
+        .btn {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="texto">
+      <div class="marca">WebPro Solutions <span>· Jhonatan Davis</span></div>
+      <h1>Esta prévia saiu de órbita</h1>
+      <p>
+        Os links de prévia ficam no ar por <b>5 dias</b> após o envio, e o prazo
+        deste chegou ao fim.
+      </p>
+      <p>
+        Ainda tem interesse no projeto? Me chame agora e envio um
+        <b>novo acesso</b> em poucos minutos.
+      </p>
+
+      <div class="acoes">
+        <a
+          class="btn btn-zap"
+          href="https://wa.me/5564992818272?text=Ol%C3%A1%2C%20Jhonatan!%20Minha%20pr%C3%A9via%20expirou%20e%20gostaria%20de%20receber%20um%20novo%20acesso."
+          target="_blank"
+          rel="noopener"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.38A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.1.82.83-3.02-.2-.31a8.2 8.2 0 1 1 6.95 3.83Zm4.5-6.15c-.25-.12-1.46-.72-1.69-.8-.23-.09-.39-.13-.56.12-.16.25-.64.8-.78.97-.14.16-.29.18-.54.06a6.7 6.7 0 0 1-1.97-1.22 7.4 7.4 0 0 1-1.36-1.69c-.14-.25 0-.38.1-.5.12-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.4-.42-.56-.42h-.47c-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.05s.88 2.38 1 2.55c.12.16 1.73 2.64 4.2 3.7.59.26 1.05.41 1.4.52.59.19 1.13.16 1.55.1.47-.07 1.46-.6 1.66-1.17.2-.58.2-1.07.14-1.17-.06-.1-.23-.16-.48-.29Z"
+            />
+          </svg>
+          Chamar no WhatsApp
+        </a>
+        <a
+          class="btn btn-mail"
+          href="mailto:jhonatandavis64@gmail.com?subject=Novo%20acesso%20%C3%A0%20pr%C3%A9via&body=Ol%C3%A1%2C%20Jhonatan!%20Minha%20pr%C3%A9via%20expirou%20e%20gostaria%20de%20receber%20um%20novo%20acesso."
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <path d="m3 7 9 6 9-6" />
+          </svg>
+          Enviar e-mail
+        </a>
+      </div>
+      <p class="nota">
+        Você também pode responder à mensagem em que recebeu este link.
+      </p>
+
+      <footer>
+        <strong>WebPro Solutions</strong> — jhonatandavis64@gmail.com · (64)
+        99281-8272
+      </footer>
+    </main>
+
+    <div class="cena" aria-hidden="true">
+      <picture>
+        <source
+          srcset="/propostas-webpro/404.webp"
+          type="image/webp"
+        />
+        <img
+          src="/propostas-webpro/404.png"
+          alt=""
+          width="1280"
+          height="721"
+        />
+      </picture>
+    </div>
+  </body>
+</html>

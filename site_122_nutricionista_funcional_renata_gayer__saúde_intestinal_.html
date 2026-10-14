@@ -1,0 +1,774 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nutricionista Funcional Renata Gayer – Nutricionista em Curitiba</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Archivo:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-page: #f3eedd;
+        --bg-soft: #fbf8f0;
+        --bg-deep: #1f3326;
+        --bg-deep-2: #243d2c;
+        --ink: #1b2a20;
+        --ink-soft: #4b5a4f;
+        --on-deep: #f3eedd;
+        --on-deep-soft: #b9c6bb;
+        --gold: #e2a33b;
+        --gold-deep: #c6832199;
+        --line: #c9bfa0;
+        --line-deep: #3c5240;
+        --radius-lg: 38% 62% 61% 39% / 45% 41% 59% 55%;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+          --bg-page: #eae3cb;
+          --bg-soft: #f1ebd9;
+        }
+      }
+      :root[data-theme="dark"] {
+        --bg-page: #eae3cb;
+        --bg-soft: #f1ebd9;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        * {
+          animation-duration: 0.001ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.001ms !important;
+        }
+      }
+      body {
+        margin: 0;
+        background: var(--bg-page);
+        color: var(--ink);
+        font-family: "Archivo", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        color: inherit;
+      }
+      .wrap {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+      @media (max-width: 640px) {
+        .wrap {
+          padding: 0 20px;
+        }
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Fraunces", serif;
+        margin: 0;
+        letter-spacing: -0.01em;
+      }
+
+      /* ---------- NAV ---------- */
+      header.nav {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(243, 238, 221, 0.88);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--line);
+      }
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 0;
+      }
+      .logo {
+        font-family: "Fraunces", serif;
+        font-weight: 600;
+        font-size: 1.25rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .logo-mark {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: var(--bg-deep);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: none;
+      }
+      .logo-mark svg {
+        width: 16px;
+        height: 16px;
+      }
+      nav.links {
+        display: flex;
+        gap: 34px;
+        font-size: 0.97rem;
+      }
+      nav.links a {
+        text-decoration: none;
+        color: var(--ink-soft);
+        transition: color 0.2s ease;
+      }
+      nav.links a:hover,
+      nav.links a:focus-visible {
+        color: var(--ink);
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 13px 26px;
+        border-radius: 999px;
+        font-family: "Archivo", sans-serif;
+        font-weight: 600;
+        font-size: 0.95rem;
+        text-decoration: none;
+        cursor: pointer;
+        border: 1px solid transparent;
+        transition:
+          transform 0.18s ease,
+          box-shadow 0.18s ease,
+          background 0.2s ease;
+      }
+      .btn:focus-visible {
+        outline: 2px solid var(--gold);
+        outline-offset: 3px;
+      }
+      .btn-gold {
+        background: var(--gold);
+        color: #241a06;
+      }
+      .btn-gold:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 22px -10px rgba(226, 163, 59, 0.65);
+      }
+      .btn-ghost {
+        background: transparent;
+        border-color: var(--line);
+        color: var(--ink);
+      }
+      .btn-ghost:hover {
+        border-color: var(--ink);
+      }
+      .btn-ghost-deep {
+        background: transparent;
+        border-color: var(--line-deep);
+        color: var(--on-deep);
+      }
+      .btn-ghost-deep:hover {
+        border-color: var(--on-deep);
+      }
+      .nav-cta {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+      .hamburger {
+        display: none;
+        background: none;
+        border: 0;
+        cursor: pointer;
+        padding: 6px;
+      }
+      .hamburger span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: var(--ink);
+        margin: 5px 0;
+        transition: 0.25s;
+      }
+      @media (max-width: 860px) {
+        nav.links {
+          display: none;
+        }
+        .hamburger {
+          display: block;
+        }
+      }
+      .mobile-menu {
+        display: none;
+        flex-direction: column;
+        gap: 2px;
+        padding: 6px 0 18px;
+      }
+      .mobile-menu.open {
+        display: flex;
+      }
+      .mobile-menu a {
+        padding: 10px 0;
+        text-decoration: none;
+        color: var(--ink);
+        border-bottom: 1px solid var(--line);
+        font-size: 1rem;
+      }
+
+      /* ---------- HERO ---------- */
+      .hero {
+        position: relative;
+        background: var(--bg-deep);
+        color: var(--on-deep);
+        padding: 96px 0 110px;
+        overflow: hidden;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.95fr;
+        gap: 56px;
+        align-items: center;
+      }
+      @media (max-width: 900px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+          gap: 64px;
+        }
+        .hero {
+          padding: 64px 0 72px;
+        }
+      }
+      .tagline {
+        font-family: "Fraunces", serif;
+        font-style: italic;
+        font-weight: 400;
+        color: var(--gold);
+        font-size: 1.15rem;
+        margin-bottom: 18px;
+      }
+      .hero h1 {
+        font-size: clamp(2.3rem, 4.4vw, 3.55rem);
+        font-weight: 500;
+        line-height: 1.09;
+        max-width: 16ch;
+      }
+      .hero p.lede {
+        margin-top: 26px;
+        max-width: 46ch;
+        color: var(--on-deep-soft);
+        font-size: 1.07rem;
+        line-height: 1.65;
+      }
+      .hero-actions {
+        display: flex;
+        gap: 16px;
+        margin-top: 38px;
+        flex-wrap: wrap;
+      }
+      .stats {
+        display: flex;
+        gap: 0;
+        margin-top: 56px;
+        flex-wrap: wrap;
+      }
+      .stat {
+        padding-right: 28px;
+        margin-right: 28px;
+        border-right: 1px solid var(--line-deep);
+      }
+      .stat:last-child {
+        border-right: none;
+        margin-right: 0;
+        padding-right: 0;
+      }
+      .stat .num {
+        font-family: "Fraunces", serif;
+        font-size: 1.7rem;
+        color: var(--on-deep);
+        display: block;
+      }
+      .stat .lbl {
+        font-size: 0.86rem;
+        color: var(--on-deep-soft);
+        margin-top: 2px;
+      }
+
+      .hero-visual {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 420px;
+      }
+      .veg-bg {
+        position: absolute;
+        width: 165%;
+        max-width: 820px;
+        left: 50%;
+        top: 64%;
+        transform: translate(-50%, -38%);
+        opacity: 0.85;
+        filter: saturate(0.75) brightness(0.92);
+        mix-blend-mode: soft-light;
+        -webkit-mask-image: radial-gradient(
+          ellipse 46% 42% at 50% 58%,
+          black 0%,
+          black 30%,
+          rgba(0, 0, 0, 0.5) 55%,
+          transparent 82%
+        );
+        mask-image: radial-gradient(
+          ellipse 46% 42% at 50% 58%,
+          black 0%,
+          black 30%,
+          rgba(0, 0, 0, 0.5) 55%,
+          transparent 82%
+        );
+        pointer-events: none;
+        animation: float-slow 9s ease-in-out infinite;
+      }
+      @keyframes float-slow {
+        0%,
+        100% {
+          transform: translate(-50%, -38%) translateY(0);
+        }
+        50% {
+          transform: translate(-50%, -38%) translateY(-10px);
+        }
+      }
+      .photo-frame {
+        position: relative;
+        width: min(78vw, 340px);
+        height: min(78vw, 340px);
+        border-radius: var(--radius-lg);
+        background: linear-gradient(160deg, #2c4a35, #16241a);
+        border: 1px solid var(--line-deep);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 30px 60px -25px rgba(0, 0, 0, 0.55);
+        z-index: 2;
+        overflow: hidden;
+      }
+      .photo-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .photo-badge {
+        position: absolute;
+        bottom: -14px;
+        right: 6%;
+        background: var(--gold);
+        color: #241a06;
+        font-family: "Fraunces", serif;
+        font-weight: 500;
+        font-size: 0.85rem;
+        padding: 10px 16px;
+        border-radius: 14px;
+        box-shadow: 0 14px 26px -12px rgba(0, 0, 0, 0.5);
+        z-index: 3;
+      }
+
+      section {
+        padding: 104px 0;
+      }
+      @media (max-width: 640px) {
+        section {
+          padding: 68px 0;
+        }
+      }
+      .eyebrow-free {
+        color: var(--ink-soft);
+        font-size: 1.02rem;
+        max-width: 36ch;
+        margin-top: 16px;
+        line-height: 1.6;
+      }
+
+      /* ---------- GALERIA / DEPOIMENTOS ---------- */
+      .section-head {
+        max-width: 56ch;
+        margin-bottom: 44px;
+      }
+      .section-head h2 {
+        font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+        font-weight: 500;
+        line-height: 1.14;
+        margin: 0 0 10px;
+      }
+      .section-head p {
+        color: var(--ink-soft);
+        line-height: 1.6;
+        margin: 0;
+      }
+      .gallery-section {
+        background: var(--bg-soft);
+      }
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      .gallery-grid img {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        border-radius: 12px;
+        display: block;
+        background: var(--line);
+      }
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      .testimonials-grid > * {
+        background: var(--bg-soft);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 26px 24px;
+      }
+      .testimonials-grid p {
+        margin: 0 0 14px;
+        color: var(--ink-soft);
+        font-style: italic;
+        line-height: 1.65;
+      }
+      .testimonials-grid footer {
+        color: var(--ink);
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+      @media (max-width: 900px) {
+        .testimonials-grid {
+          grid-template-columns: 1fr;
+        }
+        .gallery-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 640px) {
+        .gallery-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ---------- VALUE ---------- */
+      .value {
+        background: var(--bg-page);
+      }
+      .value-grid {
+        display: grid;
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: 64px;
+        align-items: center;
+      }
+      @media (max-width: 900px) {
+        .value-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .value-img-wrap {
+        position: relative;
+        border-radius: 44% 56% 40% 60% / 55% 45% 55% 45%;
+        overflow: hidden;
+        background: var(--bg-soft);
+        border: 1px solid var(--line);
+        aspect-ratio: 1/1;
+        max-width: 420px;
+      }
+      .value-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .value h2 {
+        font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+        font-weight: 500;
+        max-width: 14ch;
+        line-height: 1.14;
+      }
+      .benefits {
+        list-style: none;
+        margin: 32px 0 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .benefits li {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        font-size: 1.02rem;
+        line-height: 1.55;
+      }
+      .benefits svg {
+        flex: none;
+        width: 22px;
+        height: 22px;
+        margin-top: 3px;
+        color: var(--gold);
+      }
+
+      /* ---------- SERVICES ---------- */
+      .services {
+        background: var(--bg-soft);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+      .service-row {
+        display: grid;
+        grid-template-columns: 64px 1fr;
+        gap: 28px;
+        padding: 34px 0;
+        border-top: 1px solid var(--line);
+      }
+      .service-row:last-child {
+        border-bottom: 1px solid var(--line);
+      }
+      .service-row .n {
+        font-family: "Fraunces", serif;
+        font-style: italic;
+        font-size: 1.6rem;
+        color: var(--gold);
+      }
+      .service-row h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        font-family: "Archivo", sans-serif;
+      }
+      .service-row p {
+        margin: 8px 0 0;
+        color: var(--ink-soft);
+        line-height: 1.6;
+      }
+
+      /* ---------- CONTACT ---------- */
+      .contact {
+        background: var(--bg-deep);
+        color: var(--on-deep);
+      }
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 60px;
+        align-items: center;
+      }
+      @media (max-width: 900px) {
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .contact-img {
+        border-radius: 50% 50% 45% 55% / 55% 45% 55% 45%;
+        overflow: hidden;
+        background: var(--bg-deep-2);
+        border: 1px solid var(--line-deep);
+        max-width: 360px;
+        aspect-ratio: 1/1;
+      }
+      .contact-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      form.contact-form {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        max-width: 440px;
+      }
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .field label {
+        font-size: 0.85rem;
+        color: var(--on-deep-soft);
+      }
+      .field input,
+      .field textarea {
+        background: var(--bg-deep-2);
+        border: 1px solid var(--line-deep);
+        color: var(--on-deep);
+        border-radius: 10px;
+        padding: 12px 14px;
+        font-family: "Archivo", sans-serif;
+        font-size: 0.98rem;
+      }
+      .form-msg {
+        font-size: 0.9rem;
+        color: var(--gold);
+        margin-top: 2px;
+      }
+
+      /* ---------- FOOTER ---------- */
+      footer {
+        background: var(--bg-page);
+        padding: 56px 0 32px;
+        border-top: 1px solid var(--line);
+      }
+      .footer-grid {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 28px;
+      }
+      .footer-bottom {
+        margin-top: 36px;
+        padding-top: 22px;
+        border-top: 1px solid var(--line);
+        font-size: 0.85rem;
+        color: var(--ink-soft);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="trial-banner" id="trialBanner" style="display:none"></div>
+
+    <header class="nav">
+      <div class="wrap nav-inner">
+        <div class="logo">
+          <span class="logo-mark">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 21c-4.5-2-7-5.5-7-9.5C5 7 8 4 12 4s7 3 7 7.5c0 4-2.5 7.5-7 9.5Z" stroke="#F3EEDD" stroke-width="1.4" />
+              <path d="M12 21V9" stroke="#F3EEDD" stroke-width="1.4" />
+            </svg>
+          </span>
+          Renata Gayer
+        </div>
+        <nav class="links">
+          <a href="#inicio">Início</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#contato">Contato</a>
+        </nav>
+        <div class="nav-cta">
+          <a href="https://wa.me/5541988034931" class="btn btn-gold">Agendar pelo WhatsApp</a>
+          <button class="hamburger" id="hamburger" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+      <div class="wrap"><div class="mobile-menu" id="mobileMenu"><a href="#inicio">Início</a><a href="#sobre">Sobre</a><a href="#servicos">Serviços</a><a href="#contato">Contato</a></div></div>
+    </header>
+
+    <section class="hero" id="inicio">
+      <div class="wrap hero-grid">
+        <div class="reveal d1">
+          <p class="tagline">Nutrição funcional focada na sua saúde intestinal.</p>
+          <h1>Transformando sua saúde de dentro para fora em Curitiba.</h1>
+          <p class="lede">Especialista em saúde intestinal, ajudo você a retomar o bem-estar através de uma nutrição descomplicada, eficiente e personalizada para a sua rotina.</p>
+          <div class="hero-actions">
+            <a href="https://wa.me/5541988034931" class="btn btn-gold">Agendar pelo WhatsApp</a>
+          </div>
+        </div>
+        <div class="hero-visual reveal d2">
+          <div class="photo-frame"><img src="assets/nutricionista/kit_00_c490fbae.webp" alt="Renata Gayer em atendimento clínico"></div>
+          <div class="photo-badge">Dra. Renata Gayer</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="value" id="sobre">
+      <div class="wrap value-grid">
+        <div class="value-img-wrap reveal"><img src="assets/nutricionista/kit_01_6ff885d4.webp" alt="Ambiente acolhedor da clínica" loading="lazy"></div>
+        <div class="reveal d1">
+          <h2>Mais do que dietas, um novo estilo de vida.</h2>
+          <p class="eyebrow-free">Com foco em saúde intestinal, meu atendimento em Curitiba busca entender a causa raiz dos seus sintomas, equilibrando seu corpo com comida de verdade.</p>
+          <ul class="benefits">
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" /></svg>Atendimento humanizado em Curitiba.</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" /></svg>Foco em saúde intestinal e longevidade.</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" /></svg>Plano alimentar descomplicado e prático.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="servicos">
+      <div class="wrap">
+        <div class="services-head reveal"><h2>Nossos Serviços</h2></div>
+        <div class="service-list">
+          <div class="service-row"><span class="n">01</span><div><h3>Consulta inicial</h3><p>Análise detalhada do seu histórico, sintomas e objetivos.</p></div></div>
+          <div class="service-row"><span class="n">02</span><div><h3>Plano alimentar</h3><p>Diretrizes nutricionais personalizadas para sua rotina.</p></div></div>
+          <div class="service-row"><span class="n">03</span><div><h3>Acompanhamento mensal</h3><p>Ajustes, suporte contínuo e monitoramento de resultados.</p></div></div>
+          <div class="service-row"><span class="n">04</span><div><h3>Bioimpedância</h3><p>Avaliação da sua composição corporal com precisão.</p></div></div>
+          <div class="service-row"><span class="n">05</span><div><h3>Suplementação</h3><p>Prescrição inteligente focada na recuperação intestinal.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria" class="gallery-section">
+      <div class="wrap">
+        <div class="section-head reveal"><h2>Espaço e Detalhes</h2></div>
+        <div class="gallery-grid reveal">
+          <img src="assets/nutricionista/kit_02_ef1574f2.webp" alt="Detalhes da estrutura do consultório" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section id="depoimentos" class="testimonials-section">
+      <div class="wrap">
+        <div class="section-head reveal"><h2>O que dizem os pacientes</h2></div>
+        <div class="testimonials-grid reveal">
+          <div><p>"A Renata mudou minha relação com a comida e tratou meu intestino como ninguém nunca fez."</p><footer>— Mariana S.</footer></div>
+          <div><p>"Super atenciosa, o plano é muito fácil de seguir. A saúde melhorou drasticamente."</p><footer>— Ricardo L.</footer></div>
+          <div><p>"Excelente profissional! O acompanhamento mensal faz toda a diferença no processo."</p><footer>— Fernanda P.</footer></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contato">
+      <div class="wrap contact-grid">
+        <div class="reveal">
+          <div class="contact-img"><img src="assets/nutricionista/kit_00_c490fbae.webp" alt="Consultório" loading="lazy"></div>
+        </div>
+        <div class="reveal d1">
+          <h2>Vamos marcar sua consulta?</h2>
+          <form class="contact-form" id="contactForm">
+            <div class="field"><label>Nome</label><input type="text" required placeholder="Seu nome"></div>
+            <div class="field"><label>Mensagem</label><textarea required placeholder="Como posso ajudar?"></textarea></div>
+            <button type="submit" class="btn btn-gold">Enviar mensagem</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <div class="footer-grid">
+          <div class="footer-brand">Renata Gayer - Nutricionista Funcional</div>
+          <nav class="footer-nav"><span>(41) 98803-4931</span></nav>
+        </div>
+        <div class="footer-bottom">© 2026 Renata Gayer - Nutrição Funcional em Curitiba.</div>
+      </div>
+    </footer>
+
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const mobileMenu = document.getElementById("mobileMenu");
+      hamburger.addEventListener("click", () => {
+        const open = mobileMenu.classList.toggle("open");
+        hamburger.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+      document.getElementById("contactForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        window.location.href = "https://wa.me/5541988034931";
+      });
+    </script>
+  </body>
+</html>
